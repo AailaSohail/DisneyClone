@@ -11,8 +11,6 @@ import { HiPlus, HiDotsVertical } from "react-icons/hi";
 
 function Header() {
   const [toggle,setToggle] = useState(false);
-
-
   const menu = [
     {
       name: "HOME",
@@ -66,7 +64,7 @@ function Header() {
         ))}
           <div onMouseEnter={() => setToggle(!toggle)} onMouseLeave={() => setToggle(!toggle)} className="flex items-center cursor-pointer">
             <HiDotsVertical />
-          { toggle? <div className="more-opt absolute top-14 bg-zinc-900 space-y-2 pl-4 pr-8 pt-3 pb-3 outline outline-1 outline-zinc-600 rounded-sm">
+          { toggle? <div className="more-opt absolute  right-4 top-14 bg-zinc-900 space-y-2 pl-4 pr-8 pt-3 pb-3 outline outline-1 outline-zinc-600 rounded-sm z-10">
           {menu.map((items,index) => index>=3 && (
           <div className="flex items-center space-x-3 font-semibold cursor-pointer">
             <items.icon />
