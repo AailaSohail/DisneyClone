@@ -8,6 +8,13 @@ function Slider() {
     const screenWidth =window.innerWidth;
     useEffect (()=>{
        getTrendingMovies();
+       // Set up the automatic sliding interval
+    const autoSlide = setInterval(() => {
+        sliderRight(elementRef.current);
+      }, 3000);
+  
+      // Cleanup interval on unmount
+      return () => clearInterval(autoSlide);
     },[])
     const getTrendingMovies = () => {
         GlobalApi.getTrendingVideos.then(response =>{
